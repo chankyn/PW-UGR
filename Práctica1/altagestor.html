@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <META CHARSET="UTF-8">
+        <META NAME="APPLICATION-NAME" CONTENT="P1 PW">
+        <META NAME="AUTHOR" CONTENT="Miguel Ángel Hinojosa">
+        <META NAME="DESCRIPTION" CONTENT="Pr&aacute;ctica 1: Programaci&oacute;n Web">
+        <link rel="stylesheet" href="css/estilo.css">
+        <title>Gestor de usuarios: Alta</title>
+    </head>
+    <body>
+        <header>
+            <section class="logo">
+                <a href="index.html"><img src="imagenes/logo.png" alt="Logotipo"/></a>
+            </section>
+            <section class="title">
+                <h1>Biblioteca Digital</h1>
+            </section>
+            <section class="user">
+                <p>Bienvenido Pepe <a class="link-sub" href="index.html">Logout</a></p>
+            </section>
+        </header>
+        <main>
+            <section class="col-1 center margin-top-2">
+                <h3>Formulario de alta de usuario</h3>
+                <form class="form-line" action="#" method="post" name="form_alta_gestor">
+                    <section class="flex">
+                        <fieldset class="columns">
+                            <label for="nombre">Nombre: </label>
+                            <input type="text" required id="nombre" placeholder="Introduzca su nombre"/>
+                            <label for="pass">Contraseña: </label>
+                            <input type="password" required id="pass"/>
+                            <label for="pass2">Repetir contraseña: </label>
+                            <input type="password" required id="pass2"/>
+                            <label for="apellidos">Apellidos: </label>
+                            <input type="text" required id="apellidos" placeholder="Introduzca sus apellidos"/>
+                            <label for="direccion">Direcci&oacute;n: </label>
+                            <input type="text" id="direccion" placeholder="Introduzca su direcci&oacute;n"/>
+                            <label for="tipo">Tipo de usuario: </label>
+                            <select id="tipo">
+                                <option>Registrado</option>
+                                <option>Gestor</option>
+                            </select>
+                        </fieldset>
+                    </section>
+                    <input class="right" type="submit" value="Enviar"/>
+                </form>
+            </section>
+        </main>
+        <footer class="center">
+            <p><a class="link-sub" href="contacto.html">Contacto</a> - <a class="link-sub" href="como_se_hizo.pdf">C&oacute;mo se hizo</a></p>
+        </footer>
+    </body>
+</html>

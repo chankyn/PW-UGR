@@ -1,0 +1,31 @@
+{% extends "bd.html" %}
+    {% block main %}
+    <main class="bd">
+        <section class="col-1">
+            <form class="form-line" id="editar_recurso" method="POST" action="#">
+                <section class="flex">
+                    <fieldset class="center">
+                        <img  class="img-miniatura" src="" alt="Imagen recurso"/>
+                    </fieldset>
+                    <fieldset class="columns">
+                        <label for="seccion_recurso">Seccion: </label>
+                        <select id="seccion_recurso">
+                            {% for seccion in secciones %}
+                                <option value="{{seccion.datos.id_seccion}}">{{seccion.datos.nombre}}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="recursos">Recursos: </label>
+                        <select id="recursos">
+                            {% for recurso in recursos %}
+                                <option value="{{recurso[0]}}">{{recurso[1]}}</option>
+                            {% endfor %}
+                        </select>
+                    </fieldset>
+                </section>
+                <fieldset class="center">
+                    <input type="button" id="btnEliminarRecurso" value="Eliminar"/>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+    {% endblock %}

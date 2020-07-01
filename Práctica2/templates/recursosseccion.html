@@ -1,0 +1,21 @@
+{% extends "bd.html" %}
+    {% block main %}
+        <main class="bd">
+            <section class="col-1 center-elems">
+                <h2>Recursos de la Secci&oacute;n: {{datos_seccion.datos.nombre}}</h2>
+                <section class="grid-3x3">
+                    {% for recurso in recursos %} 
+                        <article>
+                            <h2><a class="link-sub" href="recurso.php?id={{recurso.datos.id_recurso}}">{{recurso.datos.nombre}}</a></h2>
+                            <a href="recurso.php?id={{recurso.datos.id_recurso}}"><img class="img-pokemon-miniatura" src="{{recurso.datos.url_imagen}}" alt="Imagen recurso {{recurso.datos.id_recurso}}"/></a>
+                            <p>Descripcion {{recurso.datos.nombre}}</p>
+                        </article>
+                    {% endfor %}
+                </section>
+                <section id="data-nav">
+                    <input type="hidden" id="recursos_totales" value="{{recursos_totales}}"/>
+                    <input type="hidden" id="id_seccion" value="{{datos_seccion.datos.id_seccion}}"/>
+                </section>
+            </section>
+        </main>
+    {% endblock %}

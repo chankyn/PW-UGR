@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <META CHARSET="UTF-8">
+        <META NAME="APPLICATION-NAME" CONTENT="P1 PW">
+        <META NAME="AUTHOR" CONTENT="Miguel Ángel Hinojosa">
+        <META NAME="DESCRIPTION" CONTENT="Pr&aacute;ctica 1: Programaci&oacute;n Web">
+        <link rel="stylesheet" href="css/estilo.css">
+        <title>Base de Datos: Pokemon</title>
+    </head>
+    <body>
+        <header>
+            <section class="logo">
+                <a href="bd1.html"><img src="imagenes/b_pokemon.png" alt="Logo Biblioteca"/></a>
+            </section>
+            <section class="title">
+                <h1>Biblioteca Pokemon</h1>
+            </section>
+            <section class="user">
+                <p>Bienvenido Pepe <a class="link-sub" href="index.html">Logout</a></p>
+            </section>
+        </header>
+        <nav class="col-1 center">
+            <ul >
+                <li><a class="link-sub" href="recursosseccion1.html">Normal</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Agua</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">El&eacute;ctrico</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Lucha</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Tierra</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Ps&eacute;quico</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Roca</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Siniestro</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Acero</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Fuego</a>
+                <li><a class="link-sub" href="recursosseccion1.html">Veneno</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Volador</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Bicho</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Fantasma</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Drag&oacute;n</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Planta</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Hada</a></li>
+            </ul>
+        </nav>
+        <main class="bd">
+            <section class="col-1">
+                <form class="form-line" name="editar_bd" method="POST" action="#">
+                    <section class="flex">
+                        <fieldset class="center">
+                            <img  class="img-miniatura" src="imagenes/r_agua.png" alt="Imagen seccion"/>
+                            <input type="button"  value="Editar imagen"/>
+                        </fieldset>
+                        <fieldset class="columns">
+                            <label for="nombre">Nombre: </label>
+                            <input type="text"  id="nombre" value="Agua"/>
+                            <label for="autor">Autor: </label>
+                            <input type="text" id="autor" value="Miguel Ángel"/>
+                        </fieldset>
+                    </section>
+                    <fieldset class="description">
+                        <label  for="text_desc">Descripci&oacute;n</label>
+                        <textarea class="text2" rows=5 id="text_desc">Pokemons de tipo Agua</textarea>
+                        <input class="right" type="submit" value="Enviar"/>
+                    </fieldset>
+                </form>
+            </section>
+        </main>
+        <footer class="center">
+            <p><a class="link-sub" href="contacto.html">Contacto</a> - <a class="link-sub" href="como_se_hizo.pdf">C&oacute;mo se hizo</a></p>
+        </footer>
+    </body>
+</html>

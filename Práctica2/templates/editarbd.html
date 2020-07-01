@@ -1,0 +1,37 @@
+{% extends "bd.html" %}
+    {% block title %}Gestor Bibliotecas: Borrar BD{% endblock %}
+    {% block main %}
+    <main class="bd">
+        <section class="col-1">
+            <form class="form-line" name="editar_bd" method="POST" action="#">
+                <section class="flex">
+                    <fieldset class="center">
+                        <img  class="img-miniatura" src="{{datos_biblioteca.datos.url_imagen}}" alt="Imagen portada biblioteca"/>
+                        <input type="button"  value="Editar imagen"/>
+                    </fieldset>
+                    <fieldset class="columns">
+                        <label for="nombre">Nombre: </label>
+                        <input type="text"  id="nombre" value="{{datos_biblioteca.datos.nombre}}"/>
+                        <label for="autor">Autor: </label>
+                        <input type="text" id="autor" value="{{nombre_autor}}"/>
+                        <label for="fuente">Fuente: </label>
+                        <input type="text" id="fuente" value="{{datos_biblioteca.datos.fuente}}"/>
+                        <label for="secciones">Secciones: </label>
+                        <select id="secciones">
+                            {% for seccion in secciones %} 
+                                <option value="{{seccion.datos.id_seccion}}">{{seccion.datos.nombre}}</option>
+                            {% endfor %}
+                        </select>
+                        <input class="left" value="Editar secci&oacute;n" type="button">
+                        <input class="right" value="Añadir nueva secci&oacute;n" type="button">
+                    </fieldset>
+                </section>
+                <fieldset class="description">
+                    <label  for="text_desc">Descripci&oacute;n</label>
+                    <textarea class="text2" rows=5 id="text_desc">{{datos_biblioteca.datos.descripcion}}</textarea>
+                    <input class="right" type="button" id="btnEditarBD" value="Enviar"/>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+{% endblock %}

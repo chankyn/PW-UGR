@@ -1,0 +1,29 @@
+{% extends "bd.html" %}
+    {% block main %}
+    <main class="bd">
+        <section class="col-1">
+            <form class="form-line" name="editar_seccion" method="POST" action="#">
+                <section class="flex">
+                    <fieldset class="center">
+                        <img  class="img-miniatura" src="{{secciones[0].datos.url_imagen}}" alt="Imagen seccion"/>
+                    </fieldset>
+                    <fieldset class="columns">
+                        <label for="seccion">Seccion: </label>
+                        <select id="seccion">
+                            {% for seccion in secciones %}
+                                <option value="{{seccion.datos.id_seccion}}">{{seccion.datos.nombre}}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="nombre">Nombre: </label>
+                        <input type="text" readonly id="nombre" value="{{secciones[0].datos.nombre}}"/>
+                        <label for="autor">Autor: </label>
+                        <input type="text" readonly id="autor" value="{{autor}}"/>
+                    </fieldset>
+                </section>
+                <fieldset class="center">
+                    <input type="button" id="btnEliminarSeccion" value="Eliminar"/>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+    {% endblock %}

@@ -1,0 +1,45 @@
+{% extends "g_portada.html" %}
+    {% block title %}Gestor Base de Datos{% endblock %}
+    {% block header_user %}
+        <section>
+            <p>Bienvenido {{name_user}} <span class="link-sub" id="logout" >Logout</span></p>
+            {% if es_gestor == true %}
+                <aside>
+                    <a class="link-sub" href="altagestor.php">Alta </a>
+                    <a class="link-sub" href="borrargestor.php">Baja </a>
+                    <a class="link-sub" href="editargestor.php">Edici&oacute;n </a>
+                </aside>
+            {% endif %}
+        </section>
+    {% endblock %}
+    {% block main %}
+    <main>
+        <section class="center-elems col-2">
+            <figure>
+                <img class="gestor" src="imagenes/bd_portada.png" alt="Imagen de gestor de base de datos"/>
+            </figure>
+            <a class="link-title" href="crearbd.php"><strong class="medium double-line-height">Crear biblioteca digital</strong></a>
+        </section>
+        <section class="col-2">
+            <h1>Bibliotecas dadas de alta</h1>
+            <section id="bscroll" class="scroll-visible center">
+                {% for biblioteca in bibliotecas %}
+                <article class="flex double-line-height">
+                    <a class="col-2 recursos_user" href="bd.php?id={{biblioteca.datos.id_biblioteca}}" >
+                        <img class="img-miniatura" alt="Miniatura {{biblioteca.datos.nombre}}" src="{{biblioteca.datos.url_imagen}}"/>
+                    </a>
+                    <article class="col-2">
+                        <a class="link-title" href="bd.php?id={{biblioteca.datos.id_biblioteca}}"><strong>{{biblioteca.datos.nombre}}</strong></a>
+                        {% if es_gestor == true %}
+                        <aside>
+                            <a class="link-sub" href="borrarbd.php?id={{biblioteca.datos.id_biblioteca}}">Borrar </a>
+                            <a class="link-sub" href="editarbd.php?id={{biblioteca.datos.id_biblioteca}}">Edici&oacute;n</a>
+                        </aside>
+                        {% endif %}
+                    </article>
+                </article>
+                {% endfor %}
+            </section>
+        </section>
+    </main>
+    {% endblock %}

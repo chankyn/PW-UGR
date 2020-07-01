@@ -1,0 +1,33 @@
+{% extends "basic.html" %}
+    {% block title %}Bibliotequilla{% endblock %}
+    {% block header_title %}Biblioteca Digital{% endblock %}
+    {% block header_user %}
+    <section class="form-line">
+        <input type="button" value="Iniciar sesión" id="btnIniciarSesion" />
+        <input type="button" value="Registrarse" id="btnRegistro" />
+    </section>
+    {% endblock %}
+    
+    {% block main %}
+    <main>
+        <section class="col-2">
+            <figure>
+                
+                <img class="portada" src="imagenes/g_portada.png" alt="Imagen de portada"/>
+            </figure>
+        </section>
+        <section class="col-2">
+            <h1>Bibliotecas dadas de alta</h1>
+            <section id="bscroll" class="scroll-visible center">
+                {% for biblioteca in bibliotecas %} 
+                <article class="flex">
+                    <a class="col-2" href="bd.php?id={{biblioteca.datos.id_biblioteca}}" >
+                        <img class="img-miniatura" alt="Miniatura {{biblioteca.datos.nombre}}" src="{{biblioteca.datos.url_imagen}}"/>
+                    </a>
+                    <a class="col-2 link-title" href="bd.php?id={{biblioteca.datos.id_biblioteca}}"><strong>{{biblioteca.datos.nombre}}</strong></a>
+                </article>
+                {% endfor %}
+            </section>
+        </section>
+    </main>
+    {% endblock %}

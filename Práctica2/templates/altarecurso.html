@@ -1,0 +1,40 @@
+{% extends "bd.html" %}
+    {% block main %}
+        <main class="bd">
+            <section class="col-1">
+                <form class="form-line" action="#" method="post" name="form_alta_seccion">
+                    <section class="flex">
+                        <fieldset>
+                            <form  method="post" action="upload.php" enctype="multipart/form-data">
+                                <section class="preview">
+                                    <img src="" id="img_cargada" width="150" height="100">
+                                </section>
+                                <input type="file" id="file" name="file" requried />
+                                <input type="button" class="button" value="Subir" id="upload">
+                                <input type="button" class="button" value="Mostrar archivos subidos" id="cargar_imagenes_usuario">
+                            </form>
+                        </fieldset>
+                        <fieldset class="columns">
+                            <label for="sec">Seccion: </label>
+                            <select id="sec">
+                                {% for seccion in secciones %}
+                                    <option value="{{seccion.datos.id_seccion}}">{{seccion.datos.nombre}}</option>
+                                {% endfor %}
+                            </select>
+                            <label for="nombre">Nombre: </label>
+                            <input type="text"  id="nombre" value=""/>
+                            <label for="autor">Autor: </label>
+                            <input type="text" id="autor" value=""/>
+                        </fieldset>
+                    </section>
+                    <section class="form-line">
+                        <fieldset class="description">
+                            <label  for="text_desc">Descripci&oacute;n</label>
+                            <textarea class="text2" rows=5 id="text_desc"></textarea>
+                            <input class="right" type="button" id="btnCrearRecurso" value="Enviar"/>
+                        </fieldset>
+                    </section>
+                </form>
+            </section>
+        </main>
+    {% endblock %}

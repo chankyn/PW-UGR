@@ -1,0 +1,91 @@
+{% extends "basic.html" %}
+    {% block title %}Base de Datos: {{datos_biblioteca.datos.nombre}}{% endblock %}
+    {% block header_title %}Biblioteca {{datos_biblioteca.datos.nombre}}{% endblock %}
+    {% block header_logo %}<section class="flex"><a href="index.php" class="col-25-10"><img class="icon-header" src="imagenes/home.png"/></a><a  class="col-65-10" href="bd.php?id={{datos_biblioteca.datos.id_biblioteca}}"><img class="bd-logo" src="{{datos_biblioteca.datos.url_imagen}}" alt="Logo {{datos_biblioteca.datos.nombre}}"/></a></section>{% endblock %}
+    {% block header_user %}
+        {% if name_user %}
+            <p>Bienvenido {{name_user}}<img id="profile" class="icon" src="imagenes/profile.png"/></p>
+            <p><span class="link-sub" id="logout" >Logout<img class="icon" src="imagenes/exit.png"/></span></p>
+        {% else %}
+        <section class="form-line">
+            <input type="button" value="Iniciar sesión" id="btnIniciarSesion" />
+            <input type="button" value="Registrarse" id="btnRegistro" />
+        </section>
+        {% endif %}
+        <section id="user_mobile">
+            <strong>Usuario conectado</strong>
+            <img class="icon-mobile" src="imagenes/menu-barras.png" alt="Icono menu de barras"/>
+            <section class="info-mobile">
+                <form method="POST" action="gestorbd.html" class="form margin-auto  ">
+                    <label for="usuario_mobile">Usuario</label>
+                    <input type="text" required id="usuario_mobile" placeholder="Introduzca su usuario"/>
+                    <label for="password">Contraseña</label>
+                    <input type="password_mobile" required id="password_mobile" placeholder="Introduzca su contraseña"/>
+                    <input class="center" type="submit" value="Enviar"/>
+                </form>
+            </section>
+        </section>
+    {% endblock %}
+    {% block nav %}
+        <nav class="col-1 center">
+            <ul>
+                {% for seccion in secciones %} 
+                    <li><a class="link-sub" href="recursosseccion.php?id={{seccion.datos.id_seccion}}">{{seccion.datos.nombre}}</a></li>
+                {% endfor %}
+            </ul>
+            <section id="nav_mobile">
+                <strong>Secciones </strong>
+                <img class="icon-mobile" src="imagenes/menu-barras.png" alt="Icono menu de barras"/>
+                <section class="info-mobile">
+                    <ol>
+                        {% for seccion in secciones %} 
+                            <li><a class="link-sub" href="recursosseccion.php?id={{seccion.datos.id_seccion}}">{{seccion.datos.nombre}}</a></li>
+                        {% endfor %}
+                    </ol>
+                </section>
+            </section>
+        </nav>
+    {% endblock %}
+    {% block main %}
+    <main class="bd">
+        <section class="col-65-10 center">
+            <p class="text">{{datos_biblioteca.datos.descripcion}}</p>
+            <h1>Recursos destacados</h1>
+            <section class="scroll-visible">
+                {% for seccion in secciones %} 
+                    <article class="flex">
+                        <a href="recursosseccion.php?id={{seccion.datos.id_seccion}}" class="col-2">
+                            <img class="img-seccion zoom" alt="Miniatura seccion {{seccion.datos.nombre}}" src="{{seccion.datos.url_imagen}}"/>
+                        </a>
+                        <article class="col-2">
+                            <a class="link-title" href="recursosseccion.php?id={{seccion.datos.id_seccion}}" ><strong>{{seccion.datos.nombre}}</strong></a>
+                            <p>{{seccion.datos.descripcion}}</p>
+                        </article>
+                    </article>
+                {% endfor %}
+            </section>
+        </section>
+        <section class="col-25-10 info-add">
+            <section id="info-gen">
+                <p class="underline"><strong>Informaci&oacute;n general de la colecci&oacute;n</strong></p>
+                <p>N&uacute;mero de recursos: {{num_recursos}}</p>
+                <p>Fuentes: {{datos_biblioteca.datos.fuente}}</p>
+                <p>Autor: {{autor}}</p>
+            </section>
+            <section class="text2">
+                <aside class="center">
+                    <h4>Opciones para Secciones</h4>
+                    <a class="link-sub" href="editarseccion.php?id={{datos_biblioteca.datos.id_biblioteca}}">Edici&oacute;n </a>
+                    <a class="link-sub" href="altaseccion.php?id={{datos_biblioteca.datos.id_biblioteca}}">Alta </a>
+                    <a class="link-sub" href="borrarseccion.php?id={{datos_biblioteca.datos.id_biblioteca}}">Borrado</a>
+                </aside>
+                <aside class="center">
+                    <h4>Opciones para Recursos</h4>
+                    <a class="link-sub" href="editarrecurso.php?id={{datos_biblioteca.datos.id_biblioteca}}">Edici&oacute;n </a>
+                    <a class="link-sub" href="altarecurso.php?id={{datos_biblioteca.datos.id_biblioteca}}">Alta </a>
+                    <a class="link-sub" href="borrarrecurso.php?id={{datos_biblioteca.datos.id_biblioteca}}">Borrado</a>
+                </aside>
+            </section>
+        </section>
+    </main>
+    {% endblock %}

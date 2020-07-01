@@ -1,0 +1,25 @@
+{% extends "g_portada.html" %}
+    {% block title %}Contacto{% endblock %}
+    {% block header_user %}
+        {% if name_user %}
+            <p>Bienvenido {{name_user}} <span class="link-sub" id="logout" >Logout</span></p>
+        {% else %}
+        <section class="form-line">
+            <input type="button" value="Iniciar sesión" id="btnIniciarSesion" />
+            <input type="button" value="Registrarse" id="btnRegistro" />
+        </section>
+        {% endif %}
+    {% endblock %}
+    {% block main %}
+    <main>
+        <section class="margin-auto center margin-top-2">
+            <p>Sitio Web creado para la asignatura Programaci&oacute;n Web</p>
+            <p>Universidad de Granada</p>
+            <p>Curso 2019/2020</p>
+            <address>
+                <p class="margin-top-5">Miguel Ángel Hinojosa</p>
+                 </address>
+            <img class="img-contacto margin-top-2" src="imagenes/contacto.png" alt="Imagen contacto"/>
+        </section>
+    </main>
+    {% endblock %}

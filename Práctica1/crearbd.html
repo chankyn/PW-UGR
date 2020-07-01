@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <META CHARSET="UTF-8">
+        <META NAME="APPLICATION-NAME" CONTENT="P1 PW">
+        <META NAME="AUTHOR" CONTENT="Miguel Ángel Hinojosa">
+        <META NAME="DESCRIPTION" CONTENT="Pr&aacute;ctica 1: Programaci&oacute;n Web">
+        <link rel="stylesheet" href="css/estilo.css">
+        <title>Gestor Bibliotecas: Crear BD</title>
+    </head>
+    <body>
+        <header>
+            <section class="logo">
+                <a href="index.html"><img src="imagenes/logo.png" alt="Logotipo"/></a>
+            </section>
+            <section class="title">
+                <h1>Biblioteca Digital</h1>
+            </section>
+            <section class="user line-height">
+                <p>Bienvenido Pepe <a class="link-sub" href="index.html">Logout</a></p>
+            </section>
+        </header>
+        <main>
+            <section class="col-1">
+                <form class="form-line" name="add_bd" method="POST" action="#">
+                    <section class="flex">
+                        <fieldset>
+                            <button class="center-elems">Subir imagen</button>
+                        </fieldset>
+                        <fieldset class="columns">
+                            <label for="nombre">Nombre: </label>
+                            <input type="text" required id="nombre" placeholder="Introduzca nombre biblioteca"/>
+                            <label for="autor">Autor: </label>
+                            <input type="text" required id="autor" placeholder="Introduzca su nombre"/>
+                            <label for="fuente">Fuente: </label>
+                            <input type="text" required id="fuente" placeholder="Introduzca la fuente"/>
+                            <label for="secciones">Secciones: </label>
+                            <input list="secciones" name="seccion">
+                            <datalist id="secciones">
+                                <option value="Seccion1">
+                                <option value="Seccion2">
+                                <option value="Seccion3">
+                                <option value="Seccion4">
+                                <option value="Seccion5">
+                            </datalist>
+                            <input class="right" value="Añadir nueva secci&oacute;n" type="button">
+                        </fieldset>
+                    </section>
+                    <fieldset class="description">
+                        <label  for="text_desc">Descripci&oacute;n</label>
+                        <textarea class="text2" rows=5 id="text_desc"></textarea>
+                        <input class="right" type="submit" value="Enviar"/>
+                    </fieldset>
+                </form>
+            </section>
+        </main>
+        <footer class="center">
+            <p><a class="link-sub" href="contacto.html">Contacto</a> - <a class="link-sub" href="como_se_hizo.pdf">C&oacute;mo se hizo</a></p>
+        </footer>
+    </body>
+</html>

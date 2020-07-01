@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <META CHARSET="UTF-8">
+        <META NAME="APPLICATION-NAME" CONTENT="P1 PW">
+        <META NAME="AUTHOR" CONTENT="Miguel Ángel Hinojosa">
+        <META NAME="DESCRIPTION" CONTENT="Pr&aacute;ctica 1: Programaci&oacute;n Web">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/estilo.css">
+        <title>Base de Datos: Pokemon</title>
+    </head>
+    <body>
+        <header>
+            <section class="logo">
+                <a href="bd1.html"><img src="imagenes/b_pokemon.png" alt="Logo Biblioteca"/></a>
+            </section>
+            <section class="title">
+                <h1>Biblioteca Pokemon</h1>
+            </section>
+            <section class="user">
+                <p>Bienvenido Pepe <a class="link-sub" href="index.html">Logout</a></p>
+            </section>
+            <section id="user_mobile">
+                <strong>Usuario conectado</strong>
+                <img class="icon-mobile" src="imagenes/menu-barras.png" alt="Icono menu de barras"/>
+                <section class="info-mobile">
+                    <form method="POST" action="gestorbd.html" class="form margin-auto  ">
+                        <label for="usuario">Usuario</label>
+                        <input type="text" required id="usuario" placeholder="Introduzca su usuario"/>
+                        <label for="password">Contraseña</label>
+                        <input type="password" required id="password" placeholder="Introduzca su contraseña"/>
+                        <input class="center" type="submit" value="Enviar"/>
+                    </form>
+                </section>
+            </section>
+            
+        </header>
+        <nav class="col-1 center">
+            <ul >
+                <li><a class="link-sub" href="recursosseccion1.html">Normal</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Agua</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">El&eacute;ctrico</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Lucha</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Tierra</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Ps&eacute;quico</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Roca</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Siniestro</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Acero</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Fuego</a>
+                <li><a class="link-sub" href="recursosseccion1.html">Veneno</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Volador</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Bicho</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Fantasma</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Drag&oacute;n</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Planta</a></li>
+                <li><a class="link-sub" href="recursosseccion1.html">Hada</a></li>
+            </ul>
+            
+            <section id="nav_mobile">
+                <strong>Secciones </strong>
+                <img class="icon-mobile" src="imagenes/menu-barras.png" alt="Icono menu de barras"/>
+                <section class="info-mobile">
+                    <ol>
+                        <li><a class="link-sub" href="recursosseccion1.html">Normal</a></li>
+                        <li><a class="link-sub" href="recursosseccion1.html">Agua</a></li>
+                        <li><a class="link-sub" href="recursosseccion1.html">El&eacute;ctrico</a></li>
+                        <li><a class="link-sub" href="recursosseccion1.html">Lucha</a></li>
+                        <li><a class="link-sub" href="recursosseccion1.html">Tierra</a></li>
+                        <li><a class="link-sub" href="recursosseccion1.html">Ps&eacute;quico</a></li>
+                        <li><a class="link-sub" href="recursosseccion1.html">Roca</a></li>
+                        <li><a class="link-sub" href="recursosseccion1.html">Siniestro</a></li>
+                        <li><a class="link-sub" href="recursosseccion1.html">Acero</a></li>
+                        <li><a class="link-sub" href="recursosseccion1.html">Fuego</a>
+                        <li><a class="link-sub" href="recursosseccion1.html">Veneno</a></li>
+                        <li><a class="link-sub" href="recursosseccion1.html">Volador</a></li>
+                        <li><a class="link-sub" href="recursosseccion1.html">Bicho</a></li>
+                        <li><a class="link-sub" href="recursosseccion1.html">Fantasma</a></li>
+                        <li><a class="link-sub" href="recursosseccion1.html">Drag&oacute;n</a></li>
+                        <li><a class="link-sub" href="recursosseccion1.html">Planta</a></li>
+                        <li><a class="link-sub" href="recursosseccion1.html">Hada</a></li>
+                    </ol>
+                </section>
+            </section>
+        </nav>
+        <main class="bd">
+            <section class="col-65-10 center">
+                <p class="text">Biblioteca dedicada a almacenar a todos los pokemons existentes. Estos pokemons se encuentran ordenados por el tipo al que pertecenen.</p>
+                <h1>Recursos destacados</h1>
+                <section class="scroll-visible">
+                    <article class="flex">
+                        <a href="recursosseccion1.html" class="col-2">
+                            <img class="img-seccion zoom" alt="Miniatura recurso 1" src="imagenes/r_agua.png"/>
+                        </a>
+                        <article class="col-2">
+                            <a class="link-title" href="recursosseccion1.html" ><strong>Agua</strong></a>
+                            <p>Pokemons de tipo Agua</p>
+                        </article>
+                    </article>
+                    <article class="flex">
+                        <a href="recursosseccion1.html" class="col-2">
+                            <img class="img-seccion zoom" alt="Miniatura recurso 2" src="imagenes/r_fuego.png"/>
+                        </a>
+                        <article class="col-2">
+                            <a class="link-title" href="recursosseccion1.html" ><strong>Fuego</strong></a>
+                            <p>Pokemons de tipo Fuego</p>
+                        </article>
+                    </article>
+                    <article class="flex">
+                        <a href="recursosseccion1.html" class="col-2">
+                            <img class="img-seccion zoom" alt="Miniatura recurso 3" src="imagenes/r_bicho.png"/>
+                        </a>
+                        <article class="col-2">
+                            <a class="link-title" href="recursosseccion1.html" ><strong>Bicho</strong></a>
+                            <p>Pokemons de tipo Bicho</p>
+                        </article>
+                    </article>
+                    <article class="flex">
+                        <a href="recursosseccion1.html" class="col-2">
+                            <img class="img-seccion zoom" alt="Miniatura recurso 2" src="imagenes/r_fuego.png"/>
+                        </a>
+                        <article class="col-2">
+                            <a class="link-title" href="recursosseccion1.html" ><strong>Fuego</strong></a>
+                            <p>Pokemons de tipo Fuego</p>
+                        </article>
+                    </article>
+                </section>
+            </section>
+            <section class="col-25-10 info-add">
+                <section id="info-gen">
+                    <p class="underline"><strong>Informaci&oacute;n general de la colecci&oacute;n</strong></p>
+                    <p>N&eacute;mero de recursos: 18</p>
+                    <p>Fuentes: Wikipedia</p>
+                    <p>Autor: Miguel Ángel</p>
+                </section>
+                <section class="text2">
+                    <aside class="center">
+                        <h4>Opciones para Secciones</h4>
+                        <a class="link-sub" href="editarseccion.html">Edici&oacute;n </a>
+                        <a class="link-sub" href="altaseccion.html">Alta </a>
+                        <a class="link-sub" href="borrarseccion.html">Borrado</a>
+                    </aside>
+                    <aside class="center">
+                        <h4>Opciones para Recursos</h4>
+                        <a class="link-sub" href="editarrecurso.html">Edici&oacute;n </a>
+                        <a class="link-sub" href="altarecurso.html">Alta </a>
+                        <a class="link-sub" href="borrarrecurso.html">Borrado</a>
+                    </aside>
+                </section>
+            </section>
+        </main>
+        <footer class="center">
+            <p><a class="link-sub" href="contacto.html">Contacto</a> - <a class="link-sub" href="como_se_hizo.pdf">C&oacute;mo se hizo</a></p>
+        </footer>
+    </body>
+</html>

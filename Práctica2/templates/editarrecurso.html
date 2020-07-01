@@ -1,0 +1,44 @@
+{% extends "bd.html" %}
+    {% block main %}
+    <main class="bd">
+        <section class="col-1">
+            <form class="form-line" id="editar_recurso" method="POST" action="#">
+                <section class="flex">
+                    <fieldset class="center">
+                        <img  class="img-miniatura" src="" alt="Imagen recurso"/>
+                        <input type="button"  value="Editar imagen"/>
+                    </fieldset>
+                    <fieldset class="columns">
+                        <label for="seccion_recurso">Seccion: </label>
+                        <select id="seccion_recurso">
+                            {% for seccion in secciones %}
+                                <option value="{{seccion.datos.id_seccion}}">{{seccion.datos.nombre}}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="recursos">Recursos: </label>
+                        <select id="recursos">
+                            {% for recurso in recursos %}
+                                <option value="{{recurso[0]}}">{{recurso[1]}}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="nombre">Nombre: </label>
+                        <input type="text"  id="nombre" value=""/>
+                        <label for="autor">Autor: </label>
+                        <input type="text" id="autor" value=""/>
+                        <label for="nueva_s">Nueva sección: </label>
+                        <select id="nueva_s">
+                            {% for seccion in secciones %}
+                                <option value="{{seccion.datos.id_seccion}}">{{seccion.datos.nombre}}</option>
+                            {% endfor %}
+                        </select>
+                    </fieldset>
+                </section>
+                <fieldset class="description">
+                    <label  for="text_desc">Descripci&oacute;n</label>
+                    <textarea class="text2" rows=5 id="text_desc"></textarea>
+                    <input class="right" type="button" id="btnModificarRecurso" value="Enviar"/>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+    {% endblock %}

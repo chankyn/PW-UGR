@@ -1,0 +1,437 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+
+    font-family: 'Arial';
+}
+
+/** Estilos para el diseño responsive de la página bd1.html **/
+
+/* Ocultamos las secciones diseñadas para el uso con el móvil. */
+#user_mobile, #nav_mobile, .info-mobile {
+    display: none;
+}
+/* Colocamos el icono de barras en el lado derecho de la pantalla. */
+.icon-mobile {
+    float: right;
+}
+/* Cambiamos el color de la información adicional. */
+.info-mobile {
+    background-color:rgb(243, 224, 209);
+}
+/* Simulación de botón. Muestra el contenido adicional cuando pulsamos sobre el icono. Necesario javascript para hacerlo útil..*/
+.icon-mobile:hover + section.info-mobile{
+    display: block;
+    overflow: visible;
+}
+
+/* Cuando estamos utilizando un teléfono móvil... */
+@media only screen and (max-width: 768px) {
+    /* Todas las columnas creadas pasan a tener el 100% de anchura. */
+    [class*="col-"] {
+      width: 100% !important;
+    }
+    /* Quitamos el modo flexbox del header y el main. */
+    header, main, footer {
+        display: block!important;
+        height: auto!important;
+    }
+    /* El logo pasa a ocupar el 100% del ancho. */
+    section.logo {
+        width: 100% !important;
+    }
+    /* Ocultamos las secciones de usuario y el menú de secciones. Hacemos visibles las secciones móvil en su lugar. */
+    section.user, nav ul, #info-gen{
+        display: none;
+    }
+   
+    #user_mobile, #nav_mobile {
+        display: block;
+        text-align: center!important; 
+    }
+    /* Quitamos el margen que hay en la información general de la base de datos. */
+    .info-add > section.text2 {
+        margin-top: 0!important;
+    }
+    .info-add {
+        margin: 0 !important;
+    }
+    main section section > article {
+        width: 100% !important;
+        margin: 3% auto 3% auto !important  ;
+    }
+    .scroll-visible {
+        width: 90%;
+        margin: auto;
+    }
+}
+
+/** Estilos para dividir el contenido en columnas. **/ 
+.col-1 {
+    width: 100%;
+}
+
+.col-2{
+    margin: auto;
+    width: 50%;
+}
+
+.col-25-10 {
+    width: 25%;
+}
+
+.col-65-10 {
+    margin: auto;
+    width: 65%;
+}
+
+.grid-3x3 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-3x3 > * {
+    margin: auto;
+    margin-top: 2em;
+
+    width: 30%;
+}
+
+/* El contenedor de esta clase es un flexbox por columnas. */
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+article.flex{
+    justify-content: center;
+    margin: 3%;
+}
+
+/* El contenedor de esta clase es un flexbox por filas. */
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/** Estilos para modificar las imágenes. **/
+.img-miniatura {
+    width: 60%;
+}
+
+.img-seccion {
+    width: 30%;
+}
+
+/* Aumenta el tamaño del elemento cuando pasamos el ratón sobre él. */
+.zoom:hover {
+    transform: scale(1.5);
+}
+
+/* Muestra la barra de desplazamiento del elemento. */
+.scroll-visible {
+    overflow-y: scroll;
+    max-height: 75vh;
+}
+
+/* Subraya el elemento. */
+.underline{
+    text-decoration: underline;
+}
+
+/* Centra los elementos del contenedor. */
+.center {
+    text-align: center;
+}
+
+/** Estilos para hacer más legible el texto. **/
+.text{
+    padding: 5% 5%;
+    
+    line-height: 2;
+    font-size: 1.1em;
+}
+
+.text2 {
+    margin: auto;
+    line-height: 2;
+}
+.line-height {
+    line-height: 1.6;
+}
+.double-line-height {
+    line-height: 200%;
+}
+.medium {
+    font-size: 1.5em !important;
+}
+
+/* Coloca al elemento a la derecha. */
+.right {
+    float: right;
+}
+
+/* Coloca al elemento a la izquierda. */
+.left {
+    float: left;
+}
+
+/* Pone el margen del elemento a automático. Usado para centrar elementos dentro de contenedores. */
+.margin-auto{
+    margin: auto;
+}
+/* Aumenta el margen superior del elemento. */
+.margin-top-2 {
+    margin-top: 2%;
+}
+.margin-top-5 {
+    margin-top: 5%;
+}
+
+/** Estilo específico del header. **/
+
+header {
+    margin-bottom: 1%;
+    display:flex;
+
+    width: 100%;
+    height: 18%;
+
+    /* Coloca un degradado de color como fondo. */
+    background-image: linear-gradient(to top, #deecdd 0%, #c1dfc4 100%);
+    /* Añade una sombra baja del tamaño y color especificado. */
+    box-shadow: 0 0 5px 0 #c1dfc4;
+}
+
+/*
+    Dividimos la cabecera en tres secciones:
+    logo    -   title  -   user
+    20%     -   60%    -   20%
+*/      
+header > section.logo, header > section.user {
+    width: 20%;
+    margin: auto;
+}
+header > section.title {
+    width: 60%;
+
+    margin: auto;
+    text-align: center;
+}
+
+/* Cambiamos el tamaño del logo y lo centramos en el contenedor. */
+header > section.logo img {
+    width: 40%;
+    height: 40%;
+
+    margin: auto;
+    display: block;
+    /* Se escala la imagen para mantener la relación aspecto y se ajusta al contendor. */
+    object-fit: contain;
+}
+
+/** Estilo específico del main. **/
+
+main {
+    display: flex;
+    /* Indicamos un alto mínimo para que el elemento footer se coloque adecuadamente. */
+    min-height: 75%;
+}
+
+main.bd {
+    /* En los formularios de alta, edición y borrado es necesario un mínimo más bajo para colocar el footer correctamente. */
+    min-height: 72%;
+}
+
+main section > figure img {
+    display: block;
+    margin: auto;
+}
+
+img.portada {
+    width: 80%;
+}
+
+img.gestor {
+    width: 50%;
+}
+
+main section section > article {
+    width: 80%;
+
+    padding:1%;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+
+/* Indicamos el color del enlace y le quitamos la decoración por defecto. */
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* Los elementos que se encuentren dentro de un enlace con la clase link-title tendrán un aumento en el tamaño de letra. */
+a.link-title > * {
+    font-size: 1.17em;
+}
+
+/* Añade un borde cuando colocamos el ratón sobre el enlace. */
+a.link-title *:hover, a.link-sub:hover{
+    color: #73937E;
+    border-bottom: 3px solid rgb(101, 128, 103);
+}
+
+.center-elems{
+    margin-top: 2%;
+    text-align: center;
+}
+
+/* Centra las imagenes y botones en los formularios de alta de recursos. */
+button.center-elems, img.center-elems{
+    margin-top: 10%;
+    margin-left: 20%;
+}
+
+
+/** Estilo específico del footer. **/
+
+footer{
+    margin-top: auto;
+    
+    width: 100%;
+    height: 4%;
+    
+    background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+    box-shadow: 0px 0px 5px 0px #C4F8C0;
+}
+
+
+/** Estilo específico de nav -> Menú de las secciones **/
+
+nav li{
+    margin-left: 1%;
+}
+
+nav ul li{
+    display: inline;
+}
+
+/** Formulario de inicio de sesión en index.html. **/
+/* Indicamos que el formulario es un flexbox y que todos los componentes se alinean con el mismo tamaño. */
+.form{
+    width: 50%;
+    
+    display: flex;
+    flex-flow: row wrap;
+    flex-direction: column;
+    align-items: stretch;
+    
+    font-size: 0.8em;
+}
+/* Cambiamos el estilo del botón submit del formulario. */
+.form input[type="submit"] {
+    padding: 4px 8px;
+
+    background-color: #73937E;
+    border: 1px solid rgb(139, 167, 140);
+    color: white;
+    cursor: pointer;
+
+}
+/* Si se redimensiona la página y no hay suficiente espacio para que se vea correctamente el formulario,
+    pasará a ser un formulario en una sola fila. */
+@media (max-height: 500px) {
+    .form {
+        flex-flow: row wrap;
+        align-items: center;
+
+        width: 100%;
+    }
+}
+
+/** Formulario de alta, borrado y editado de recursos. **/
+.form-line {
+    width: 60%;
+    margin: auto;
+}
+
+.form-line fieldset{
+    width: 30%;
+    border: none;
+
+    line-height: 1.5em;
+    margin: 2% auto auto auto;
+}
+
+.form-line fieldset > button{
+    padding: 5%;
+}
+
+.form-line fieldset.columns {
+    flex: 2;
+}
+
+.form-line fieldset.columns > * {
+    width: 35%;
+}
+
+.form-line fieldset.columns > label {
+    float: left;
+}
+
+.form-line .description {
+    width: 90%;
+    margin: auto;
+}
+
+.form-line input[type="submit"], .form-line input[type="button"] {
+    margin: 1%;
+    padding: 4px 8px;
+
+    background-color: #73937E;
+    border: 1px solid rgb(139, 167, 140);
+    color: white;
+    cursor: pointer;
+}
+
+textarea {
+    display:block;
+    width: 100%;
+    height: auto; 
+    
+    resize: none;
+}
+
+.img-pokemon{
+    width: 80%;
+}
+
+.img-pokemon-miniatura {
+    width: 20%;
+}
+
+/* Estilo para la información general de la base de datos. */
+.info-add {
+    margin:2%;
+
+    background-color:rgb(243, 224, 209);
+    line-height: 3;
+    font-size: 0.9em;
+}
+.info-add > section {
+    padding: 5%;
+}
+.info-add > section.text2 {
+    margin-top: 50%;
+}
+
+#data-nav {
+    display: block;
+    margin: 1%;
+}

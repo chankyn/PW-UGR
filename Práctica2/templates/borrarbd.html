@@ -1,0 +1,26 @@
+{% extends "bd.html" %}
+    {% block title %}Gestor Bibliotecas: Borrar BD{% endblock %}
+    {% block main %}
+    <main class="bd">
+        <section class="col-1">
+            <form class="form-line" name="form_borrar_bd" method="POST" action="#">
+                <section class="flex">
+                    <fieldset class="center">
+                        <img  class="img-miniatura" src="{{datos_biblioteca.datos.url_imagen}}" alt="Imagen portada biblioteca"/>
+                    </fieldset>
+                    <fieldset class="columns">
+                        <label for="nombre">Nombre: </label>
+                        <input type="text" readonly id="nombre" value="{{datos_biblioteca.datos.nombre}}"/>
+                        <label for="autor">Autor: </label>
+                        <input type="text" readonly id="autor" value="Miguel Ángel"/>
+                    </fieldset>
+                </section>
+                <section class="center">
+                    <p>¿Est&aacute; seguro de eliminar esta base de datos?</p>
+                    <input type="button" value="Si" id="btnBorrar"//>
+                    <input type="button" value="No" id="btnNegacion"/>
+                </section>
+            </form>
+        </section>
+    </main>
+{% endblock %}

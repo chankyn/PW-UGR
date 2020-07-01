@@ -1,0 +1,33 @@
+{% extends "g_gestorbd.html" %}
+    {% block title %}Gestor de usuarios: Edici&oacute;n{% endblock %}
+    {% block main %}
+    <main>
+        <section class="col-1 center margin-top-2">
+            <h3>Modificar datos de usuario</h3>
+            <form class="form-line" action="#" method="post" name="form_editar_gestor">
+                <section class="flex">
+                    <fieldset class="columns">
+                        <label for="buscar">B&uacute;squeda de usuario: </label>
+                        <input type="search" required id="buscar" class="cargar_datos_usuario" list="busqueda" />
+                        <datalist id="busqueda"></datalist>
+
+                        <label for="apellidos">Apellidos: </label>
+                        <input type="text" id="apellidos"  value="Apellidos del usuario"/>
+                        <label for="pass">Nueva contraseña: </label>
+                        <input type="password" id="pass"/>
+                        <label for="pass2">Repetir contraseña: </label>
+                        <input type="password" id="pass2"/>
+                        <label for="direccion">Direcci&oacute;n: </label>
+                        <input type="text" id="direccion" value="Direccion del usuario"/>
+                        <label for="tipo">Tipo de usuario: </label>
+                        <select id="tipo">
+                            <option value="0">Registrado</option>
+                            <option value="1">Gestor</option>
+                        </select>
+                    </fieldset>
+                </section>
+                <input class="right" type="button" id="btnModificarUsuario" value="Modificar"/>
+            </form>
+        </section>
+    </main>
+    {% endblock %}

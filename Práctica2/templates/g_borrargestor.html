@@ -1,0 +1,19 @@
+{% extends "g_gestorbd.html" %}
+    {% block title %}Gestor de usuarios: Borrado{% endblock %}
+    {% block main %}
+    <main>
+        <section class="col-1 center margin-top-2">
+            <h3>Borrar usuario</h3>
+            <form class="form-line" action="borrargestor.php" method="post" name="form_borrar_gestor">
+                <section class="flex">
+                    <fieldset class="columns">
+                        <label for="buscar">B&uacute;squeda de usuario: </label>
+                        <input type="search" required id="buscar" list="busqueda" />
+                        <datalist id="busqueda"></datalist>
+                    </fieldset>
+                </section>
+                <input class="right" type="button" id="btnBorrarUsuario" value="Eliminar"/>
+            </form>
+        </section>
+    </main>
+    {% endblock %}

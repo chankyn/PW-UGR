@@ -1,0 +1,33 @@
+{% extends "g_gestorbd.html" %}
+    {% block title %}Gestor de usuarios: Alta{% endblock %}
+    {% block main %}
+    <main>
+        <section class="col-1 center margin-top-2">
+            <h3>Formulario de alta de usuario</h3>
+            <form class="form-line" action="#" method="post" name="form_alta_gestor">
+                <section class="flex">
+                    <fieldset class="columns">
+                        <label for="nombre_user">Nombre: </label>
+                        <input type="text" required id="nombre_user" placeholder="Introduzca su nombre"/>
+                        <label for="pass_user">Contraseña: </label>
+                        <input type="password" required id="pass_user"/>
+                        <label for="pass2_user">Repetir contraseña: </label>
+                        <input type="password" required id="pass2_user"/>
+                        <label for="apellidos_user">Apellidos: </label>
+                        <input type="text" id="apellidos_user" placeholder="Introduzca sus apellidos"/>
+                        <label for="direccion_user">Direcci&oacute;n: </label>
+                        <input type="text" id="direccion_user" placeholder="Introduzca su direcci&oacute;n"/>
+                        <label for="tipo">Tipo de usuario: </label>
+                        <select id="tipo">
+                            <option value=0>Registrado</option>
+                            {% if es_gestor == true %}
+                                <option value=1>Gestor</option>
+                            {% endif %}
+                        </select>
+                    </fieldset>
+                </section>
+                <input class="right" type="button" value="Enviar" id="btnNuevoUsuario"/>
+            </form>
+        </section>
+    </main>
+{% endblock %}

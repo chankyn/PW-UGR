@@ -1,0 +1,29 @@
+{% extends "bd.html" %}
+    {% block main %}
+        <main class="bd">
+            <section class="col-1">
+                <form class="form-line">
+                    <section class="flex">
+                        <fieldset class="center">
+                            <img  class="img-miniatura" src="{{datos_recurso.datos.url_imagen}}" alt="Imagen recurso {{datos_recurso.datos.id_recurso}}"/>
+                        </fieldset>
+                        <fieldset class="columns">
+                            <label for="nombre">Nombre: </label>
+                            <input type="text" readonly id="nombre" value="{{datos_recurso.datos.nombre}}"/>
+                            <label for="autor">Autor: </label>
+                            <input type="text" readonly id="autor" value="{{nombre_autor}}"/>
+                            <label for="seccion">Secci&oacute;n: </label>
+                            <input type="text" readonly id="seccion" value="{{nombre_seccion}}"/>
+                        </fieldset>
+                    </section>
+                    <fieldset class="description">
+                        <label  for="text_desc">Descripci&oacute;n</label>
+                        <textarea class="text2" readonly rows=5 id="text_desc">{{datos_recurso.datos.descripcion}}</textarea>
+                        <input type="hidden" id="id_recurso" value="{{datos_recurso.datos.id_recurso}}"/>
+                        <input class="left" type="button" value="Anterior" id="anterior"/>
+                        <input class="right" type="button" value="Siguiente" id="siguiente"/>
+                    </fieldset>
+                </form>
+            </section>
+        </main>
+    {% endblock %}
